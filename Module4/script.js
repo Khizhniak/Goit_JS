@@ -3,7 +3,7 @@ const products = {
   milk: 15,
   apples: 20,
   chicken: 50,
-  cheese: 40,
+  cheese: 40
 };
 
 const order = {
@@ -13,6 +13,8 @@ const order = {
   cheese: 1
 };
 
+
+
 function Cashier(name, productDatabase) {
   this.name = name;
 
@@ -20,19 +22,19 @@ function Cashier(name, productDatabase) {
 
   this.customerMoney = 0;
 
-  this.setCustomerMoney = function (value) {
-    return this.customerMoney = value;
+  this.setCustomerMoney = function(value) {
+    return (this.customerMoney = value);
   };
 
-  this.countTotalPrice = function (order) {
+  this.countTotalPrice = function(order) {
     let total = 0;
     for (key in order) {
-      total += order[key] * productDatabase[key]
+      total += order[key] * productDatabase[key];
     }
     return total;
   };
 
-  this.countChange = function (price, money) {
+  this.countChange = function(price, money) {
     if (money < price) {
       return price - money;
     } else {
@@ -40,15 +42,15 @@ function Cashier(name, productDatabase) {
     }
   };
 
-  this.onSuccess = function (change) {
+  this.onSuccess = function(change) {
     console.log(`Спасибо за покупку, ваша сдача ${change}!`);
   };
 
-  this.onError = function () {
-    console.log('You doesnt have money to buy anything..');
+  this.onError = function() {
+    console.log("You doesnt have money to buy anything..");
   };
 
-  this.reset = function () {
-    return this.customerMoney = 0;
+  this.reset = function() {
+    return (this.customerMoney = 0);
   };
-};
+}

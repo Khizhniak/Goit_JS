@@ -104,24 +104,44 @@
 
 //============================
 
-const products = [
-  { name: 'Радар', price: 1300, quantity: 4 },
-  { name: 'Сканер', price: 2700, quantity: 3 },
-  { name: 'Дроид', price: 400, quantity: 7 },
-  { name: 'Захват', price: 1200, quantity: 2 },
-];
+// const products = [
+//   { name: 'Радар', price: 1300, quantity: 4 },
+//   { name: 'Сканер', price: 2700, quantity: 3 },
+//   { name: 'Дроид', price: 400, quantity: 7 },
+//   { name: 'Захват', price: 1200, quantity: 2 },
+// ];
 
-const getAllPropValues = function(arr, prop) {
-const array = [];
-  for (const key in arr) {
-   const element = arr[prop];
-   array.push(element)
-  }
-  console.log(array)
-  };
+// const getAllPropValues = function(arr, prop) {
+// return arr.map(e => e[prop]) 
+//   };
 
-console.log(getAllPropValues(products, 'name')); // ['Радар', 'Сканер', 'Дроид', 'Захват']
+// console.log(getAllPropValues(products, 'name')); // ['Радар', 'Сканер', 'Дроид', 'Захват']
 
 // console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
 
 // console.log(getAllPropValues(products, 'category')); //[]
+
+//==============================
+
+// const products = [
+//   { name: 'Радар', price: 1300, quantity: 4 },
+//   { name: 'Сканер', price: 2700, quantity: 3 },
+//   { name: 'Дроид', price: 400, quantity: 7 },
+//   { name: 'Захват', price: 1200, quantity: 2 },
+// ];
+
+// const calculateTotalPrice = function(allProdcuts, productName) {
+// let total = 0;
+// for (let i = 0; i < allProdcuts.length; i++) {
+//   const element = allProdcuts[i];
+//   if(element.name === productName){
+//     let total = element.price * element.quantity
+//     return total
+//   }
+// }
+// };
+
+
+// console.log(calculateTotalPrice(products, 'Радар')); // 5200
+
+// console.log(calculateTotalPrice(products, 'Дроид')); // 2800

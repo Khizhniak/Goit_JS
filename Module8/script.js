@@ -1,5 +1,7 @@
 const refs = {
-  gallery: document.querySelector(".js-gallery")
+  gallery: document.querySelector(".js-gallery"),
+  lg: document.querySelector(".lightbox"),
+  image_cont: document.querySelector(".lightbox__image"),
 }
 
 const images = [
@@ -85,6 +87,16 @@ const images = [
 
     const handleSubmit = e => {
       console.log(e.target)
+      refs.lg.classList.add("is-open")
+      const img = e.target.getAttribute("data-source");
+      refs.image_cont.setAttribute("src", img)
+      refs.lg.addEventListener("click", (e) => {
+        if(e.target != refs.image_cont){
+          refs.lg.classList.remove("is-open")
+        } else {
+          return;
+        }
+      })
     }
 
     refs.gallery.addEventListener("click", handleSubmit)

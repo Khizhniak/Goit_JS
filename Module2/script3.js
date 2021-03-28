@@ -1,22 +1,12 @@
+    const findLongestWord = function (string) {
+        const arrayOfWords = string.split(" ")
+        return arrayOfWords.reduce((longest, current) => {
+            return current.length > longest.length ? current : longest
+        })
+    };
 
-const formatString = function(string) {
-let smth = string.split("");
+    console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
 
-if(smth.length > 40){
-do {
-  smth.pop()
-} while (smth.length > 40);
-smth.push("...")
-  return smth.join("")
-} else {
- return string
-}
-};
+    console.log(findLongestWord('Google do a roll')); // 'Google'
 
-console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-
-console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-
-console.log(formatString('Curabitur ligula sapien.'));
-
-console.log(formatString('Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.'));
+    console.log(findLongestWord('May the force be with you')); // 'force'

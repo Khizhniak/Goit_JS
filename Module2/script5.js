@@ -1,17 +1,13 @@
+const checkForSpam = function (str) {
+  const checkWords = ["sale", "spam"]
+  return checkWords.some(x => str.toLowerCase().includes(x));
+};
 
-let input;
-const numbers = [];
-let total = 0;
 
-do {
-  input = prompt("Enter the number/s:");
-  numbers.push(input);
-} while (input !== null);
+console.log(checkForSpam('Latest technology news')); // false
 
-if (input == null) {
-  for (let i = 0; i < numbers.length; i++) {
-    total += Number(numbers[i]);
-  }
-}
+console.log(checkForSpam('JavaScript weekly newsletter')); // false
 
-console.log(`Summ: ${total}`);
+console.log(checkForSpam('Get best sale offers now!')); // true
+
+console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
